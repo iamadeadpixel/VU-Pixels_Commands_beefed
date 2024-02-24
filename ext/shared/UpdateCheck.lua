@@ -2,10 +2,10 @@
 	require('__shared/version') -- under normal conditions use this.
 
 -- This line contains the message if the mod.json is the same on github ,as is the version.lua localy on your server
-s_current = ("VU-Pixels_Tickets seems to be up2date")
+s_current = ("VU-Pixels_Commands seems to be up2date")
 
 -- This line contains the message if the mod.json is the difrent on github ,as is the version.lua localy on your server
-s_update = ("VU-Pixels_Tickets seems to be out of date!")
+s_update = ("VU-Pixels_Commands seems to be out of date!")
 
 -- Make sure this point on github to your mod.json file !
 -- Example: s_githublink = ("https://raw.githubusercontent.com/-username-/-modname-/main") 
