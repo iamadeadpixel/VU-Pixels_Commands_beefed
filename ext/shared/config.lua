@@ -10,11 +10,8 @@ Config = {
 	balance = true, -- Enables or disables the !balance module
 
 -- Checks if there is a updated version
-	updatecheck = true, -- On server boot only: Shows if there is a new version
 
-	chatmessages = true, -- Spams a one time message, Gamemode,levelname and ticket count in chat
-	updatecheck = false, -- On server boot only: Shows if there is a new version
-	morechoppers = false, -- Turns on or off infinate choppers for Heli Superiority (carefull !)
+	updatecheck = true, -- On server boot only: Shows if there is a new version
 	consolespam = true -- Turns on or off the console spam
 
 }
