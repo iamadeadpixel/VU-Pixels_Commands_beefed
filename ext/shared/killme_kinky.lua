@@ -1,5 +1,6 @@
 if Config.Killme_kinky then  
 	print("**** Killme Kinky version is active ****"); 
+	-- ALL print statements will be removed when this damn thing is 100% working with no isues.
 
 Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	if screenInfo ~= "Registering entity resources" then
@@ -46,15 +47,25 @@ local addup_users = {}
 local killme_users = {}
 local message_users = {}
 
+-- experimental: can be difrent on gamemode, this is work in progress, lets say u need more addup stacks when playing TDM maps
+--	local s_message_spam = 3 -- actualy, this spams 2 times the message when u reach the max amount on !killme commands u can use.
+--	local s_killme_counter = 4 -- Default times u can use the !killme command
+--	local s_addup_counter = 4 -- base stack = 1, player needs to make 3 kills to earn ONE extra !killme command
+--	local s_killmestack_counter = 6 -- Maximum !killme commands a player can use,after that, it gets locked
+
+-- ----
+
 Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, isRoadKill, isHeadShot, wasVictimInReviveState, info)
 	if inflictor and message_users[inflictor.name]== s_message_spam then return end
 	if inflictor then addup_users[inflictor.name]=(addup_users[inflictor.name])+1  -- (DO NOT CHANGE THIS !)
 	end
 
+-- ----
 
 	if inflictor and addup_users[inflictor.name]== s_addup_counter  then  killme_users[inflictor.name]=(killme_users[inflictor.name])+1 -- (DO NOT CHANGE THIS !)
 		addup_users[inflictor.name] = 1 -- if the value has reached, this wil reset it back to 1. (DO NOT CHANGE THIS !)
 end
+-- ---- 
 
 	if inflictor and killme_users[inflictor.name] >= s_killmestack_counter then -- print("**  Limit reached, max 10 killme's on this server **");
 		killme_users[inflictor.name] = s_killmestack_counter -- max stack a player can use with killme
@@ -64,6 +75,7 @@ end
 	end
 end)
 
+-- ----
 
 Events:Subscribe('Player:Respawn', function(player, recipientMask, message,info,yell)
 -- avoid getting a nil isue when making a kill		
@@ -76,11 +88,11 @@ end)
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 	if message == "!killme" then
 
-		if killme_users[player.name] == 1 then ChatManager:SendMessage(('Sorry, thats it ' ) , player) -- Default message when all !killme are used.
+		if killme_users[player.name] == 1 then ChatManager:SendMessage(('Sorry, thats it ' ) , player) -- Default message when all !killme are used. -- (DO NOT CHANGE THIS !)
 		else do
 
-		ChatManager:SendMessage(( (spawnmessagetable[killme_users[player.name]]) ), player)
-	RCON:SendCommand('admin.killPlayer', {player.name})
+		ChatManager:SendMessage(( (spawnmessagetable[killme_users[player.name]]) ), player) -- This prints the notification how you 'died'
+	RCON:SendCommand('admin.killPlayer', {player.name}) -- Disabled, it is anoying to respawn all the time while we are testing only
 	killme_users[player.name]=(killme_users[player.name])-1 -- (DO NOT CHANGE THIS !)
 	message_users[player.name]=1 -- this should do it -- (DO NOT CHANGE THIS !)
 
@@ -91,7 +103,7 @@ end
 
 --
 	elseif message == "//left" then
-		if killme_users[player.name] == nil then killme_users[player.name] = s_killme_counter ; end
+		if killme_users[player.name] == nil then killme_users[player.name] = s_killme_counter ; end -- incase a players types //left in the chat before spawned
  	ChatManager:SendMessage(('Killme Commands left to use : '  ..killme_users[player.name]-1   ) , player)  
 
 end
@@ -102,6 +114,7 @@ Events:Subscribe('Level:Destroy', function()
 	announcedPlayers = {}
 	addup_users = {}
 	message_users = {}
+	print("**** resetting killme limits,round over ****"); 
 	end) 
 
 	Events:Subscribe('Player:Left', function(player)
@@ -110,6 +123,7 @@ Events:Subscribe('Level:Destroy', function()
 	killme_users[player.name] = s_killme_counter
 	announcedPlayers[player.name] = false
 	message_users[player.name] = {}
+	print("**** Player left ****"); 
 	end) 
   
 end -- statement used for the config.lua 

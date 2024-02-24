@@ -1,4 +1,6 @@
 -- Config to enable or disable some stuff
+
+	require('__shared/LevelPrint')
 	require('__shared/config')
 
 -- Advanced killme stuff (fixed data)
@@ -17,4 +19,4 @@
 	require('__shared/balance')
 
 -- Updatecheck for newer versions
-	require('__shared/UpdateCheck')
+	require('__shared/UpdateCheck') 

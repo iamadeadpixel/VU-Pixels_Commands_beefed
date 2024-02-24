@@ -1,4 +1,5 @@
 -- ----- Spaghetti code below this line.
+
 Events:Subscribe('Level:LoadingInfo', function(screenInfo)
     if screenInfo == "Running" or screenInfo == "Blocking on shader creation" then
 		local syncedBFSettings = ResourceManager:GetSettings("SyncedBFSettings")
@@ -9,39 +10,9 @@ Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	end
 end)
 
--- -----
-	m_GameModeNameMap = {
-	["ConquestLarge0"] = "Conquest Large",
-	["ConquestSmall0"] = "Conquest Small",
-	["RushLarge0"] = "Rush",
-	["SquadRush0"] = "Squad Rush",
-	["SquadDeathMatch0"] = "Squad Deathmatch",
-	["TeamDeathMatch0"] = "Team DeathMatch",
-	["TeamDeathMatchC0"] = "Team DeathMatch Close Quarters",
-	["ConquestAssaultSmall0"] = "Assault",
-	["ConquestAssaultLarge0"] = "Assault64",
-	["ConquestAssaultSmall1"] = "Assault #2",
-	["GunMaster0"] = "Gun Master",
-	["Domination0"] = "Domination",
-	["TankSuperiority0"] = "Tank Superiority",
-	["Scavenger0"] = "Scavenger",
-	["AirSuperiority0"] = "Air Superiority",
-	["CaptureTheFlag0"] = "Capture the flag",
-
--- Keku Game modes
-	["KingOfTheHill0"] = "King of the hill",
-	["HeliSuperiority0"] = "Heli Superiority"
-}
-
--- -----
-
----@param p_LevelName string
----@param p_GameMode string
----@param p_IsDedicatedServer boolean
 Events:Subscribe('Level:LoadResources', function(p_LevelName, p_GameMode, p_IsDedicatedServer)
-
-	---@diagnostic disable-next-line: undefined-global
-	s_GameMode = ServerUtils and ServerUtils:GetCustomGameModeName() or m_GameModeNameMap[p_GameMode] or p_GameMode
+	 s_GameMode = ServerUtils and ServerUtils:GetCustomGameModeName() or m_GameModeNameMap[p_GameMode] or p_GameMode
+	print(string.format("Levelprint loader: %s - Gamemode: %s", s_LevelName, s_GameMode))
 
 	if s_GameMode == "Conquest Large" then 
 	s_settings = GameMode_limits_CQL
@@ -115,8 +86,6 @@ Events:Subscribe('Level:LoadResources', function(p_LevelName, p_GameMode, p_IsDe
 
 -- -----
 	::presets_done:: 
-    print("****************** Console spammer: presets set ****************"); 
-
 	local s_MaxPlayersRCON = RCON:SendCommand('vars.maxPlayers')
 	local s_MaxPlayers = tonumber(s_MaxPlayersRCON[2]) 
 
@@ -150,7 +119,7 @@ end
 	t_killmestack_counter = s_killmestack_counter-1
 
 	if Config.consolespam then 
-    print("****************** Killme Console spammer ****************"); 
+    print("****************** Data Loader Console spammer ****************"); 
 	print('- killme Presets for the next gamemode   : '..s_GameMode..' ')
 	print('- Warning send that max stack is reached : '..t_message_spam..' ')
 	print('- Default !killme left on first spawn    : '..t_killme_counter..' ')

@@ -11,7 +11,7 @@ Config = {
 
 -- Checks if there is a updated version
 
-	updatecheck = true, -- On server boot only: Shows if there is a new version
+	updatecheck = false, -- On server boot only: Shows if there is a new version
 	consolespam = true -- Turns on or off the console spam
 
 }
