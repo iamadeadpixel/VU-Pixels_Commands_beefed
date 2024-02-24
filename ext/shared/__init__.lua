@@ -1,5 +1,4 @@
 -- Config to enable or disable some stuff
-
 	require('__shared/config')
 
 -- Advanced killme stuff (fixed data)
@@ -16,3 +15,6 @@
 
 -- Balancer stuff
 	require('__shared/balance')
+
+-- Updatecheck for newer versions
+	require('__shared/UpdateCheck')
