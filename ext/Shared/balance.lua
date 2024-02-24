@@ -66,12 +66,8 @@ local ru_counter = {}
 	Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 
     Events:Subscribe('Player:Respawn', function(player, recipientMask, message,info,yell)
---		if balance_users[player.name] == nil then balance_users[player.name] = 1 ; 	print("****  Setting the balance_users string ****"); end -- (DO NOT CHANGE THIS !)
---		if us_counter[player.name] == nil then us_counter[player.name] = 1 ; 	print("****  Setting the us_counter string ****"); end -- (DO NOT CHANGE THIS !)
---		if ru_counter[player.name] == nil then ru_counter[player.name] = 1 ; 	print("****  Setting the ru_counter string ****"); end -- (DO NOT CHANGE THIS !)
     end)
 
---    if message == "zz" then print("****  Dummy check ****"); 
 		if string.find(message, "!swap us") then
 		if player.teamId == 1 then
 			ChatManager:SendMessage("You are already on the American team", player)
@@ -87,8 +83,6 @@ local ru_counter = {}
 		ChatManager:SendMessage("Moveing you to the Russian team", player)
 	  RCON:SendCommand('admin.movePlayer', {player.name, "2", "1", "true"})
         end 
--- the stuff above works correct
--- The stuff below this, is, well, $#^#^#&@#
 
     		elseif message == "!balance" then
 			if player.teamId == 1 then print("****  US -> RU check ****"); 
@@ -101,9 +95,6 @@ local ru_counter = {}
 				ChatManager:SendMessage( (balance_message_ru[ru_counter[player.name]]), player)
 
 		RCON:SendCommand('admin.movePlayer', {player.name, "2", "1", "true"})
---		ru_counter[player.name]=(ru_counter[player.name])+1
---			if ru_counter[player.name] == 5 then ru_counter[player.name] = 1
---    end
     
 	  elseif message == "!balance" then
 
@@ -117,25 +108,20 @@ local ru_counter = {}
 			ChatManager:SendMessage( (balance_message_us[us_counter[player.name]]), player)
 
 		RCON:SendCommand('admin.movePlayer', {player.name, "1", "1", "true"})
---		us_counter[player.name]=(us_counter[player.name])+1
---			if us_counter[player.name] == 5 then us_counter[player.name] = 1
   
 
---end
 end
 end
 end
 end)
 
 Events:Subscribe('Level:Destroy', function()
-	print("**** resetting balance ,round over ****"); 
 	local balance_users = {}
 	local us_counter = {}
 	local ru_counter = {}
 		end) 
 
 	Events:Subscribe('Player:Left', function(player)
-		print("**** Player left ****"); 
 		local balance_users = {}
 		local us_counter = {}
 		local ru_counter = {}
