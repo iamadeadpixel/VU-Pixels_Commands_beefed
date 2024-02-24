@@ -1,0 +1,11 @@
+{
+    "Name": "Funny usefull public commands",
+    "Description": "Beefed up version",
+    "Version": "2.0.0",
+    "Reason": "More kinky version",
+    "Authors": [ "iamadeadpixel" ],
+  "HasVeniceEXT": true,
+  "Dependencies": {
+    "veniceext": "^1.0.0"
+  }
+}
