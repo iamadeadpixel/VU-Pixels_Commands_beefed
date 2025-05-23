@@ -11,6 +11,7 @@ enjoy !
 
 - !killme  - Kills your self (Advanced or Kinky style, see config.lua)
 - Advanced Killme: Default 5 !killme commands
+- Advanced Balance: Default 4 !balance commands
 - Want more, change killme_users[player.name] = 5 lines to the value you grant player the !killme command.
 
 - Killme Kinky: Uber version, Check killme_config.lua how to tweak for each gamemode your own presets

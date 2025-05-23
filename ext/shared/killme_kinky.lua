@@ -8,9 +8,8 @@ Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	end
 end)
 
--- ----
 
-local spawnmessagetable = {
+local killmemessagetable = {
 -- Preferred not to tamper with these 3 line.
 	(("This is a dummy entry,and wil not be spammed in the chat" )), -- entry 1
 	(("*** Last killme used, make more kills to gain a !killme again ***" )),
@@ -91,7 +90,7 @@ Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 		if killme_users[player.name] == 1 then ChatManager:SendMessage(('Sorry, thats it ' ) , player) -- Default message when all !killme are used. -- (DO NOT CHANGE THIS !)
 		else do
 
-		ChatManager:SendMessage(( (spawnmessagetable[killme_users[player.name]]) ), player) -- This prints the notification how you 'died'
+		ChatManager:SendMessage(( (killmemessagetable[killme_users[player.name]]) ), player) -- This prints the notification how you 'died'
 	RCON:SendCommand('admin.killPlayer', {player.name}) -- Disabled, it is anoying to respawn all the time while we are testing only
 	killme_users[player.name]=(killme_users[player.name])-1 -- (DO NOT CHANGE THIS !)
 	message_users[player.name]=1 -- this should do it -- (DO NOT CHANGE THIS !)

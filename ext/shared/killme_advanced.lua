@@ -8,7 +8,7 @@ if Config.Killme_advanced then
 end)
 
 
-local spawnmessagetable = {
+local killmemessagetable = {
 -- Preferred not to tamper with these 3 line.
 (("This is a dummy entry,and wil not be spammed in the chat" )), -- entry 1
 (("*** Last killme used, make more kills to gain a !killme again ***" )),
@@ -50,7 +50,7 @@ Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 		if killme_users[player.name] == 1 then ChatManager:SendMessage(('Sorry, thats it,wait till next round : ' ) , player) -- Default message when all !killme are used.
 		else do
 
-		ChatManager:SendMessage(( (spawnmessagetable[killme_users[player.name]]) ), player)
+		ChatManager:SendMessage(( (killmemessagetable[killme_users[player.name]]) ), player)
 	RCON:SendCommand('admin.killPlayer', {player.name})
 	killme_users[player.name]=(killme_users[player.name])-1
 			end

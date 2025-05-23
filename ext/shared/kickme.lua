@@ -27,7 +27,6 @@ Events:Subscribe('Level:Destroy', function()
 	end) 
 
 	Events:Subscribe('Player:Left', function(player)
-		print("**** Player left ****"); 
 	end) 
   
 end -- statement used for the config.lua 

@@ -7,11 +7,14 @@ Config = {
 	Killme_kinky = true, -- Kinky version, hard limit is 3, but you can gain up to max 10. -- needs some tweaks
 
 	kickme = true, -- Enables or disables the !kickme modules, when enabled,it spams a random message when using !kickme (random out of 344 lines)
-	balance = true, -- Enables or disables the !balance module
+
+	-- ONLY	ONE CAN BE ACTIVE,OR NONE.....
+	balance = false, -- Enables or disables the !balance module
+	balance_advanced = true, -- Enables or disables the !balance module
 
 -- Checks if there is a updated version
 
-	updatecheck = true, -- On server boot only: Shows if there is a new version
+	updatecheck = false, -- On server boot only: Shows if there is a new version
 	consolespam = true -- Turns on or off the console spam
 
 }

@@ -17,6 +17,7 @@
 
 -- Balancer stuff
 	require('__shared/balance')
+	require('__shared/balance_advanced')
 
 -- Updatecheck for newer versions
 	require('__shared/UpdateCheck') 
