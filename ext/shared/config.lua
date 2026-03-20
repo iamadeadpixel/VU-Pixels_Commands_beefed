@@ -16,8 +16,5 @@ Most of time this should be server admins, and trusted players
 
 whitelist = {
 	"iamadeadpixel",
-	"[UKF]Pixel",
-	"The male karen",
-	"The Swedish Cook"
 }
 
