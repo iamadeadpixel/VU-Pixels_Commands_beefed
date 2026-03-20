@@ -42,7 +42,7 @@ end)
 
 -- ---------------------------------------------------------
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
-	if message == ".banme" then
+	if message == "!banme" then
 
 		s_targetguid = ((b_fetchplayerguid[player.name]):gsub("-", "")) -- replace - with,,,,,,,nothing !
 			print ("")
