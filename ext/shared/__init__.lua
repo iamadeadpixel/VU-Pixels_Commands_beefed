@@ -15,3 +15,6 @@
 
 -- Self ban stuff
 	require('__shared/banme')
+
+-- Funstuff
+	require('__shared/funstuff')

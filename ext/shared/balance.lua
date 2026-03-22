@@ -1,7 +1,7 @@
 -- Welcome to the magic world of spaghetti coding.
 
 if Config.balance then 
-	print("### balance Advanced version is active ###"); 
+	print("**** balance is active ****"); 
 
 	Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	if screenInfo ~= "Registering entity resources" then
@@ -80,7 +80,7 @@ end)
 
 	Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 
-			if message == "!balance" then
+			if message == "!balance" or message == ".balance" or message == "/balance" then
 
 		if balance_counter[player.name] == 1 then ChatManager:SendMessage(('Sorry, No more !balance this round,wait till next round : ' ) , player)
 

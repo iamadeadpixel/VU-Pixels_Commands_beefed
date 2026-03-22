@@ -1,7 +1,7 @@
--- Spaghetti code by iamadeadpixel
+-- Welcome to the magic world of spaghetti coding.
 
 if Config.banme then 
-	print("**** banme version is active ****"); 
+	print("**** banme is active ****"); 
 
 	Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	if screenInfo ~= "Registering entity resources" then
@@ -42,7 +42,7 @@ end)
 
 -- ---------------------------------------------------------
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
-	if message == "!banme" then
+	if message == "!banme" or message == ".banme" or message == "/banme" then
 
 		s_targetguid = ((b_fetchplayerguid[player.name]):gsub("-", "")) -- replace - with,,,,,,,nothing !
 			print ("")

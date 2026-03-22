@@ -1,8 +1,8 @@
 {
     "Name": "Funny usefull public commands",
     "Description": "Beefed up version",
-    "Version": "4.0.1",
-    "Reason": "Fix, and added .banme",
+    "Version": "4.0.2",
+    "Reason": "Adding fun stuff",
     "Authors": [ "iamadeadpixel" ],
   "HasVeniceEXT": true,
   "Dependencies": {

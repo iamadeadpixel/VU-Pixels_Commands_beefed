@@ -1,6 +1,7 @@
+-- Welcome to the magic world of spaghetti coding.
+
 if Config.Killme then  
-	print("**** Killme Kinky version is active ****"); 
-	-- ALL print statements will be removed when this damn thing is 100% working with no isues.
+	print("**** Killme is active ****"); 
 
 Events:Subscribe('Level:LoadingInfo', function(screenInfo)
 	if screenInfo ~= "Registering entity resources" then
@@ -85,7 +86,7 @@ end)
 --	
 
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
-	if message == "!killme" then
+	if message == "!killme" or message == ".killme" or message == "/killme" then
 
 		if killme_users[player.name] == 1 then ChatManager:SendMessage(('Sorry, thats it ' ) , player) -- Default message when all !killme are used. -- (DO NOT CHANGE THIS !)
 		else do

@@ -1,2 +1,2 @@
-localModVersion = "4.0.1";
+localModVersion = "4.0.2";
 
