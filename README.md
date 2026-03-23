@@ -25,7 +25,8 @@ enjoy !
 - !abba
 - !britney
 - !cakepan
- - Use: < !commandname > (sends a single common message serverwide) - < !commandname > < part of player name > (Send the message to a player)
+- Use: < !commandname > (sends a single common message serverwide)
+- Use: < !commandname > < part of player name > (Send the message to a player)
 
 ## 20-03-2026
 ### Version 4.0.1
