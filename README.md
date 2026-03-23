@@ -4,6 +4,11 @@ Tirred of using dull commands for you server ?
 With this mod you can beef stuff up.
 enjoy !
 
+## 23-03-2026
+### Version 4.0.3
+#### Code fix for funstuff
+- Working now
+
 ## 22-03-2026
 ### Version 4.0.2
 #### Added Funstuff

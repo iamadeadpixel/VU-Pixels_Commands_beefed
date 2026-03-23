@@ -13,56 +13,72 @@ end)
 
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 
-	if message == "auch" or message == "ouch" then
+	ss_message = (string.match(message, "auch"))
+	if ss_message == "auch" then
 	  ChatManager:SendMessage("Need a medic ?",player)
 	end
 
 -- -------------------------------
 
-	if message == "noob" or message == "n00b" then
+	ss_message = (string.match(message, "noob"))
+	if ss_message == "noob" or ss_message == "n00b" then
 	  ChatManager:SendMessage("noobs with boobs?",player)
 	end
 
 -- -------------------------------
 
-	if message == "lockdown" then
+	ss_message = (string.match(message, "lockdown"))
+	if ss_message == "lockdown" then
 	  ChatManager:SendMessage("Ya, lockdown, now trow away the keys",player)
 	end
 
 -- -------------------------------
 
-	if message == "camp" or message == "camper" then
+	ss_message = (string.match(message, "camp"))
+	if ss_message == "camp" then
 	  ChatManager:SendMessage("Camping is lame, but not forbidden",player)
 	end
 
 -- -------------------------------
 
-	if message == "hi" or message == "hello" or message == "bonjour" then
+	ss_message = (string.match(message, "hello"))
+	if ss_message == "hello" then
 	  ChatManager:SendMessage("Heya "..player.name,player)
 	end
 
 -- -------------------------------
 
-	if message == "lol" then
-	  ChatManager:SendMessage("hehe, ya, funny.",player)
+	ss_message = (string.match(message, "lol"))
+	if ss_message == "lol" then
+	ChatManager:SendMessage("hehe, ya, funny.",player)
 	end
 
 -- -------------------------------
 
-	if message == "corona" then
+	ss_message = (string.match(message, "corona"))
+	if ss_message == "corona" then
 	  ChatManager:SendMessage("That beer sucks like the virus",player)
 	end
 
 -- -------------------------------
 
-	if message == "covid" then
+	ss_message = (string.match(message, "covid"))
+	if ss_message == "covid" then
 	  ChatManager:SendMessage("Hatchuu,, Oh damn "..player.name..",stay away !",player)
 	end
 
 -- -------------------------------
 
-	if message == "gg&bb" then
+	ss_message = (string.match(message, "gg&bb"))
+	if ss_message == "gg&bb" then
 	  ChatManager:SendMessage("Thnxs for playing "..player.name..",see you soon.",player)
+	end
+
+-- -------------------------------
+
+	ss_message = (string.match(message, "drama queen"))
+	if ss_message == "drama queen" then
+	  ChatManager:SendMessage("There is only one drama queen here",player)
 	end
 
 -- -------------------------------
@@ -82,7 +98,26 @@ function string:split(sep)
 	self:gsub(pattern, function(c) fields[#fields+1] = c end)
 	return fields
 end -- end of function call
+-- ---------------------------------------------------------------------
+--[[
+Events:Subscribe('Player:Chat', function(player, recipientMask, message)
+-- This code is ripped from the ingameadmin mod
+	if message == '' or player == nil then
+		return
+	end
 
+	-- lowerkey the message
+	message = message:lower()
+
+    ss_message = (string.match(message, "lol"))
+    if ss_message == "lol" then
+        print ("We found the 'lol' string")
+    
+end
+
+end)
+]]
+-- ---------------------------------------------------------------------
 Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 -- This code is ripped from the ingameadmin mod
 	if message == '' or player == nil then
