@@ -83,6 +83,13 @@ Events:Subscribe('Player:Chat', function(player, recipientMask, message)
 
 -- -------------------------------
 
+	ss_message = (string.match(message, "dramaqueen"))
+	if ss_message == "dramaqueen" then
+	  ChatManager:SendMessage("There is only one drama queen here",player)
+	end
+
+-- -------------------------------
+
 end)
 
 -- ---------------------------------------------------------------------

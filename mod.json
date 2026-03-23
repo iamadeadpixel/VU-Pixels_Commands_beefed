@@ -1,8 +1,8 @@
 {
     "Name": "Funny usefull public commands",
     "Description": "Beefed up version",
-    "Version": "4.0.3",
-    "Reason": "Adding fun stuff",
+    "Version": "4.0.4",
+    "Reason": "Adding more fun stuff",
     "Authors": [ "iamadeadpixel" ],
   "HasVeniceEXT": true,
   "Dependencies": {

@@ -5,6 +5,11 @@ With this mod you can beef stuff up.
 enjoy !
 
 ## 23-03-2026
+### Version 4.0.4
+#### Added roundtime
+- !rt to spam the current roundtime in the server (send to player only)
+
+## 23-03-2026
 ### Version 4.0.3
 #### Code fix for funstuff
 - Working now
