@@ -1,8 +1,8 @@
 {
-    "Name": "Funny usefull public commands",
-    "Description": "Beefed up version",
-    "Version": "4.0.4",
-    "Reason": "Adding more fun stuff",
+    "Name": "Usefull admin commands",
+    "Description": "simpel console admin commands",
+    "Version": "2.5.1",
+    "Reason": "revamp",
     "Authors": [ "iamadeadpixel" ],
   "HasVeniceEXT": true,
   "Dependencies": {
